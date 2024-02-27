@@ -88,17 +88,41 @@ public class LifeCycle extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	 * 
+	 * doGet()
+	 * 1. GET 방식의 요청이 발생하면 자동으로 호출되는 메소드이다.
+	 * 2. GET 방식의 요청
+	 *   1) <a href="http://localhost:8080/servlet/">
+	 *   2) <form method="GET" action="/servlet/life">
+	 *   3) location.href='/servlet/life'
+	 *   4) window.open('/servlet/life')
+	 *   5) $.ajax({
+	 *       type: 'GET',
+	 *       url: '/servlet/life',
+	 *       ...
+	 *   })
+ 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		System.out.println("doGet() 메소드 호출");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 *
+	 * doPost()
+   * 1. POST 방식의 요청이 발생하면 자동으로 호출되는 메소드이다.
+   * 2. POST 방식의 요청
+   *   1) <form method="POST" action="/servlet/life">
+   *   2) $.ajax({
+   *       type: 'POST',
+   *       url: '/servlet/life',
+   *       ...
+   *   })
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+	  System.out.println("doPost() 메소드 호출");
 		doGet(request, response);
 	}
 
