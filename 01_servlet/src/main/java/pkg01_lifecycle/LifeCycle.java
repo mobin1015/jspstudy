@@ -75,16 +75,6 @@ public class LifeCycle extends HttpServlet {
 	 * 3. service() 메소드가 있으면 여기서 요청과 응답을 해결한다.
 	 * 4. service() 메소드가 없으면 doGet() 또는 doPost() 메소드가 요청에 따라 호출된다.
 	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	  System.out.println("service() 메소드 호출");
-	  switch(request.getMethod()) {
-	  case "GET":
-	    doGet(request, response);
-	  case "POST":
-	    doPost(request, response);
-	    break;
-	  }
-	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
